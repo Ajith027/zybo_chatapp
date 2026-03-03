@@ -35,8 +35,7 @@ This project supports instant messaging, read receipts, typing indicators, and o
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chat-app.git
-cd chat-app
+git clone https://github.com/Ajith027/zybo_chatapp.git
 ```
 
 ### 2️⃣ Create Virtual Environment
@@ -115,17 +114,6 @@ templates/        # Django templates (MVT)
 static/
     css/style.css
     js/chat.js
-```
-
----
-
-## 🖼️ Screenshots
-
-_Add screenshots here if available._
-
-```
-/screenshots/chat_page.png
-/screenshots/user_list.png
 ```
 
 ---
