@@ -118,17 +118,6 @@ static/
 
 ---
 
-## 🖼️ Screenshots
-
-_Add screenshots here if available._
-
-```
-/screenshots/chat_page.png
-/screenshots/user_list.png
-```
-
----
-
 ## 🔮 Future Improvements
 
 - Group Chat Support
