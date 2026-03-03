@@ -1,0 +1,53 @@
+    /* Full viewport height */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* optional */
+        }
+
+        /* Center container */
+        .register-container {
+            display: flex;
+            justify-content: center; /* horizontal centering */
+            align-items: center;     /* vertical centering */
+            height: 100%;
+        }
+
+        /* Form styling */
+        form {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #5a9ace;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #3c7bb6;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .error ul {
+            padding-left: 20px;
+        }

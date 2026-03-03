@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with {{ other_user.username }}</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+</head>
+<body>
+
+<h2>Chat with {{ other_user.username }}</h2>
+
+<!-- Container with dynamic data for JS -->
+<div id="chat-container"
+     data-other-user-id="{{ other_user.id }}"
+     data-self-user-id="{{ current_user.id }}"
+     data-self-username="{{ current_user.username }}">
+</div>
+
+<div id="chat-box">
+    {% for msg in messages %}
+        <div class="message {% if msg.sender == current_user %}you{% else %}other{% endif %}" data-msg-id="{{ msg.id }}">
+            <strong>{{ msg.sender.username }}:</strong> {{ msg.content }}
+            {% if msg.sender == current_user %}
+                <button class="delete-btn" data-id="{{ msg.id }}">🗑️</button>
+            {% endif %}
+            <br>
+            <small>
+                {{ msg.timestamp|date:"M d, H:i" }}
+                {% if msg.sender == current_user %}
+                    {% if msg.is_read %}
+                        ✅✅ <span style="color:blue">seen</span>
+                    {% else %}
+                        ✅
+                    {% endif %}
+                {% endif %}
+            </small>
+        </div>
+    {% empty %}
+        <div>No messages yet.</div>
+    {% endfor %}
+</div>
+
+<div id="typing-indicator" style="display:none;">Typing...</div>
+
+<input type="text" id="message-input" placeholder="Type your message...">
+<button id="send-btn">Send</button>
+
+<!-- Load JS at the bottom -->
+<script src="{% static 'js/chat.js' %}"></script>
+</body>
+</html>

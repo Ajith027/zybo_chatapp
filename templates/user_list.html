@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Users</title>
+    <link rel="stylesheet" href="{% static 'css/user_list.css' %}">
+    <script src="{% static 'js/user_list.js' %}"></script>
+</head>
+<body>
+
+<!-- Top bar with logout -->
+<div class="top-bar">
+    <form id="logout-form" method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" id="logout-btn">Logout</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Available Users</h2>
+    <p>Total Users: {{ users|length }}</p>
+    <ul id="user-list">
+        {% for user in users %}
+            <li id="user-{{ user.id }}" onclick="openChat('{{ user.id }}')">
+                <strong>{{ user.username }}</strong>
+                <span class="unread-badge">0</span>
+                <span class="status-text">
+                    {% if user.is_online %}
+                        🟢 Online
+                    {% else %}
+                        ⚫ Last seen: {{ user.last_seen|date:"M d, H:i" }}
+                    {% endif %}
+                </span>
+            </li>
+        {% empty %}
+            <li>No users available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
