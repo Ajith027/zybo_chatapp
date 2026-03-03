@@ -35,8 +35,7 @@ This project supports instant messaging, read receipts, typing indicators, and o
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chat-app.git
-cd chat-app
+git clone https://github.com/Ajith027/zybo_chatapp.git
 ```
 
 ### 2️⃣ Create Virtual Environment
